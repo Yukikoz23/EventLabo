@@ -1,0 +1,435 @@
+
+body {
+  background-color: #1F3B3D;
+  color: #F1EFED;
+  font-family: 'Avenir Next','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+/* text */
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+h1, h2, menu, nav, footer {
+  font-family: 'Courier';
+}
+
+label {
+  font-size: 18px;
+}
+
+.event > p {
+  font-size: 14px;
+}
+
+/* common layout */
+
+.hidden {
+  display: none;
+}
+
+.bg-dark {
+  background-color: #162B2C;
+}
+
+.bg-right {
+  background-color: #1F3B3D;
+}
+
+.event {
+  padding: 40px 0;
+}
+
+.event > ul {
+  list-style: none;
+  border: 1px solid #2F6468;
+  width: 80%;
+  max-width: 600px;
+  padding-left: 0;
+  padding: 30px 0;
+  margin: 30px auto 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.event > ul > li {
+  margin: 0 30px;
+  opacity: 0.4;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.event > ul > li.active {
+  opacity: 1;
+  transform: scale(1.1, 1.1);
+}
+
+.name:after {
+  content: '';
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-image: url(../img/link.png);
+  background-size: contain;
+  margin-left: 6px;
+}
+
+.name {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.name-sp {
+  font-size: 18px;
+}
+
+.comment {
+  font-size: 11px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.comment-sp {
+  font-size: 10px;
+}
+
+.example {
+  color: #89BCD0;
+  font-size: 18px;
+}
+
+.example-sp {
+  font-size: 14px;
+}
+
+.input-text {
+  height: 40px;
+  max-width: 400px;
+  width: 80%;
+  padding: 0 10px;
+  line-height: 30px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #2F6468;
+  margin: 0px;
+}
+
+.textarea {
+  height: 100px;
+}
+
+.btn {
+  position: relative;
+  height: 60px;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  width: 225px;
+  margin: 0 auto;
+}
+
+form div p {
+  position: relative;
+  width: 100px;
+  height: 40px;
+}
+
+button {
+  background-color: #89BCD0;
+  height: 60px;
+  width: 200px;
+  font-size: 26px;
+  color: #1F3B3D;
+  border: none;
+  border-bottom: 5px solid #428EA6;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+form div p button {
+  width: 100px;
+  height: 40px;
+  font-size: 18px;
+}
+
+button:active {
+  position: absolute;
+  border-bottom: 2px solid #428EA6;
+  margin: 3px auto;
+  left: 0;
+  right: 0;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.link-icon {
+  width: 13px;
+  height: 13px;
+}
+
+menu, nav, .top, .event > h2, .event > p, .event button, .event img, a {
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* header & footer */
+
+footer {
+  background-color: #428EA6;
+  height: 50px;
+  width: 100%;
+  margin: 0;
+}
+
+footer a {
+  line-height: 50px;
+  color: #F1EFED;
+  text-decoration: none;
+}
+
+.logo {
+  float: left;
+  padding-left: 30px;
+  font-size: 20px;
+}
+
+.myname {
+  float: right;
+  padding-right: 30px;
+  font-size: 16px;
+}
+
+menu {
+  position: fixed;
+  top: 0;
+  right: 15px;
+  cursor: pointer;
+  background-color: #428EA6;
+  width:64px;
+  height: 64px;
+  padding: 0;
+  border-radius: 32px;
+  box-shadow: 1px 1px #2F6468;
+  z-index: 999;
+}
+
+menu:hover {
+  opacity: 0.8;
+}
+
+menu p {
+  font-size: 14px;
+  font-weight: lighter;
+  margin: 2px;
+}
+
+i {
+  padding-top: 6px;
+}
+
+nav img {
+  float: right;
+  width: 18px;
+  height: 18px;
+  padding: 5px;
+}
+
+nav {
+  background-color: #428EA6;
+  top: 0;
+  right: -300px;
+  width: 270px;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  transition: all 0.3s;
+}
+
+nav.open {
+  right: 0;
+}
+
+nav ul {
+  list-style: none;
+  text-align: left;
+  padding-left: 0;
+  margin: 0;
+}
+
+nav li {
+  border-bottom: 1px solid #1F3B3D;
+  padding: 12px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #F1EFED;
+  font-size: 20px;
+  display: block;
+}
+
+.link-top {
+  display: inline;
+}
+
+body > div {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(31, 59, 61, 0.7);
+  position: fixed;
+  z-index: 999;
+}
+
+/* top */
+
+.top h1 {
+  font-size: 86px;
+  line-height: 80px;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+.top p {
+  font-size: 20px;
+  margin-bottom: 80px;
+}
+
+/* Mouse Event */
+
+#mouse {
+  position: relative;;
+}
+
+.parent-element {
+  background-color: #2F6468;
+  width: 250px;
+  height: 150px;
+  margin: 0 auto;
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.parent-element p {
+  font-size: 16px;
+  width: 150px;
+  height: 80px;
+  line-height: 80px;
+  background-color: #F1EFED;
+  color: #1F3B3D;
+  margin: 20px auto;
+}
+
+.scroll-box {
+  height: 80px;
+  max-width: 400px;
+  width: 80%;
+  background-color: #F1EFED;
+  color: #1F3B3D;
+  line-height: 25px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 4px;
+  overflow: scroll;
+}
+
+.scroll-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-box::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #428EA6;
+}
+
+#info {
+  font-size: 14px;
+  line-height: 20px;
+  width: 300px;
+  height: 42px;
+  background-color: #2F6468;
+  opacity: 0;
+  padding: 20px;
+  transition: 0.5s;
+  position: absolute;
+  top: 350px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+}
+
+#info.show {
+  opacity: 0.9;
+}
+
+/* Touch Event */
+
+#touch div {
+  width: 250px;
+  height: 150px;
+  background-color: #89BCD0;
+  margin: 0 auto;
+}
+
+/* Drag & Drop Event */
+
+#drag-drop div {
+  height: 100px;
+  width: 220px;
+  margin: 20px auto;
+  background-color: #2F6468;
+}
+
+.flask {
+  margin: 20px;
+  width: 60px;
+  height: 60px;
+}
+
+.drop-comment {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+/* CSS Transition Event */
+
+.chemistry {
+  transition: 1s;
+  width: 70px;
+  height: 70px;
+}
+
+.chemistry:hover {
+  transform: translateX(50px);
+}
+
+/*  Form Event */
+
+form p {
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.checkbox-text {
+  padding-right: 30px;
+}
+
+/* Media file Event */
+
+video {
+  max-width: 416px;
+  width: 80%;
+  max-height: 234px;
+}

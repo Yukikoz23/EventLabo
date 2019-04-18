@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <title>Event Labo -JavaScriptのイベントを体感しよう-</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="icon" href="img/favicon.ico" alt="favicon">
+</head>
+
+<body>
+  <div class="hidden"></div>
+  <menu>
+    <i class="fas fa-microscope fa-2x"></i>
+    <p>Menu</p>
+  </menu>
+
+  <nav>
+    <ul>
+      <li><a class="link-top" href="#">↑ TOP</a><img src="img/close.png" alt="close"></li>
+      <li class="pc"><a href="#mouse">Mouse Event</a></li>
+      <li class="sp hidden"><a href="#touch">Touch Event</a></li>
+      <li><a href="#keyboard">Keyboard Event</a></li>
+      <li class="pc"><a href="#drag-drop">Drag & Drop Event</a></li>
+      <li class="pc"><a href="#css-transition">CSS Transition Event</a></li>
+      <li><a href="#value-change">Value Change Event</a></li>
+      <li><a href="#value-change">Form Event</a></li>
+      <li><a href="#clipboard">Clipboard Event</a></li>
+      <li><a href="#focus">Focus Event</a></li>
+      <li><a href="#view">View Event</a></li>
+      <li><a href="#media-file">Media file Event</a></li>
+    </ul>
+  </nav>
+
+  <section class="top">
+    <h1>Event Labo</h1>
+    <p>JavaScript のイベントを体感しよう</p>
+  </section>
+
+  <section id="mouse" class="event bg-dark pc">
+    <div id="info">
+      ボタンをクリックするとイベントが発火して<br>イベント名が表示されます。
+    </div>
+    <h2>Mouse Event</h2>
+    <p>ボタンをクリックしてみよう</p>
+    <p class="btn">
+      <button>Button</button>
+    </p>
+    <ul>
+      <li>
+        <p class="name">click</p>
+        <p class="comment">クリックされた時</p>
+      </li>
+      <li>
+        <p class="name">dblclick</p>
+        <p class="comment">ダブルクリックされた時</p>
+      </li>
+      <li>
+        <p class="name">contextmenu</p>
+        <p class="comment">右クリックされた時</p>
+      </li>
+      <li>
+        <p class="name">mousedown</p>
+        <p class="comment">ボタンが押された時</p>
+      </li>
+      <li>
+        <p class="name">mouseup</p>
+        <p class="comment">ボタンが離された時</p>
+      </li>
+    </ul>
+    <p>マウスポインタを要素に乗せてみよう</p>
+    <p>子要素と親要素の違いは・・・？</p>
+    <div class="parent-element">
+      Parent element
+      <p>Child Element</p>
+    </div>
+    <ul>
+      <li>
+        <p class="name">mouseover</p>
+        <p class="comment">マウスポインタが要素に乗った時</p>
+      </li>
+      <li>
+        <p class="name">mouseenter</p>
+        <p class="comment">マウスポインタが要素に乗った時<br>( 親要素のみ発火 )</p>
+      </li>
+      <li>
+        <p class="name">mouseout</p>
+        <p class="comment">マウスポインタが要素から離れた時</p>
+      </li>
+      <li>
+        <p class="name">mouseleave</p>
+        <p class="comment">マウスポインタが要素から離れた時<br>( 親要素のみ発火 )</p>
+      </li>
+      <li>
+        <p class="name">mousemove</p>
+        <p class="comment">マウスポインタが要素の上を移動した時</p>
+        <p class="comment example"></p>
+      </li>
+    </ul>
+    <p>入力したテキストを選択してみよう</p>
+    <input class="input-text" type="text"  value="テキスト　テキスト　テキスト"><br>
+    <ul>
+      <li>
+        <p class="name">select</p>
+        <p class="comment">入力テキストが選択されている時</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="touch" class="event bg-dark sp hidden">
+    <h2>Touch Event</h2>
+    <p>タッチしてみよう</p>
+    <div>
+    </div>
+    <ul>
+      <li>
+        <p class="name">touchstart</p>
+        <p class="comment">指を置いた時</p>
+      </li>
+      <li>
+        <p class="name">touchend</p>
+        <p class="comment">指を離した時</p>
+      </li>
+      <li>
+        <p class="name">touchmove</p>
+        <p class="comment">指を置いたまま画面上を移動した時</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="keyboard" class="event">
+    <h2>Keyboard Event</h2>
+    <p>テキストを入力してみよう</p>
+    <p>半角入力と全角入力の違いは・・・？</p>
+    <input class="input-text" type="text" placeholder="ここにテキストを入力">
+    <ul>
+      <li>
+        <p class="name">keydown</p>
+        <p class="comment">キーボードが押された時</p>
+        <p class="comment example"></p>
+      </li>
+      <li>
+        <p class="name">keypress</p>
+        <p class="comment">キーボードが押された時<br>( 文字キーのみ/半角入力のみ発火 )</p>
+        <p class="comment example"></p>
+      </li>
+      <li>
+        <p class="name">keyup</p>
+        <p class="comment">キーボードから離れた時</p>
+        <p class="comment example"></p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="drag-drop" class="event bg-dark pc">
+    <h2>Drag & Drop Event</h2>
+    <p>フラスコを下の要素にドラッグ＆ドロップしてみよう</p>
+    <div><img class="flask" src="img/flask.png" alt="flask"></div>
+    <div></div>
+    <ul>
+      <li>
+        <p class="name">dragstart</p>
+        <p class="comment">ドラッグが開始された時</p>
+      </li>
+      <li>
+        <p class="name">drag</p>
+        <p class="comment">ドラッグされている時</p>
+      </li>
+      <li>
+        <p class="name">dragend</p>
+        <p class="comment">ドラッグが終了した時</p>
+      </li>
+      <li>
+        <p class="name">dragenter</p>
+        <p class="comment">ドラッグ要素がドロップ要素に<br>乗った時</p>
+      </li>
+      <li>
+        <p class="name">dragover</p>
+        <p class="comment">ドラッグ要素がドロップ要素に<br>重なっている時</p>
+      </li>
+      <li>
+        <p class="name">dragleave</p>
+        <p class="comment">ドラッグ要素がドロップ要素から<br>離れた時</p>
+      </li>
+      <li>
+        <p class="name">drop</p>
+        <p class="comment">ドロップされた時</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="css-transition" class="event pc">
+    <h2>CSS Transition Event</h2>
+    <p>手にマウスオーバーしてみよう</p>
+    <img class="chemistry" src="img/chemistry.png" alt="chemistry">
+    <ul>
+      <li>
+        <p class="name">transitionend</p>
+        <p class="comment">CSS Transitionが終了した時</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="value-change" class="event bg-dark">
+    <h2>Value Change Event</h2>
+    <h2>Form Event</h2>
+    <p>フォームに入力してボタンをクリックしてみよう</p>
+    <form>
+      <p><input class="input-text" type="text" placeholder="ここにテキストを入力"></p>
+      <p class="pc"><textarea class="input-text textarea" placeholder="ここにテキストを入力"></textarea></p>
+      <p class="pc">
+        <input type="checkbox" name="weather" value="fine">
+        <label class="checkbox-text">I'm fine.</label>
+        <input type="radio" name="answer" value="yes" checked><label> Yes</label>
+        <input type="radio" name="answer" value="no"><label> No</label>
+      </p>
+      <div>
+        <p>
+          <button type="submit">submit</button>
+        </p>
+        <p>
+          <button type="reset">reset</button>
+        </p>
+      </div>
+    </form>
+    <ul>
+      <li>
+        <p class="name">change</p>
+        <p class="comment">&lt;form&gt;要素内の値が変更されて<br>&lt;form&gt;要素からフォーカスが離れた時</p>
+      </li>
+      <li>
+        <p class="name">input</p>
+        <p class="comment">&lt;input&gt;や&lt;textarea&gt;要素の<br>値が変更された時</p>
+      </li>
+      <li>
+        <p class="name">submit</p>
+        <p class="comment">送信ボタンが押された時</p>
+      </li>
+      <li>
+        <p class="name">reset</p>
+        <p class="comment">リセットボタンが押された時</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="clipboard" class="event">
+    <h2>Clipboard Event</h2>
+    <p>テキストをコピー/切取り/ペーストしてみよう</p>
+    <input class="input-text" value="テキスト　テキスト　テキスト">
+    <ul>
+      <li>
+        <p class="name">cut</p>
+        <p class="comment">選択範囲が<br>切り取られた時</p>
+      </li>
+      <li>
+        <p class="name">copy</p>
+        <p class="comment">選択範囲が<br>コピーされた時</p>
+      </li>
+      <li>
+        <p class="name">paste</p>
+        <p class="comment">クリップボードのアイテムが<br>貼り付けられた時</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="focus" class="event bg-dark">
+    <h2>Focus Event</h2>
+    <p>テキスト入力欄にフォーカスを当ててみよう</p>
+    <input class="input-text" placeholder="ここにテキストを入力">
+    <ul>
+      <li>
+        <p class="name">focus</p>
+        <p class="comment">要素がフォーカス<br>されている時</p>
+      </li>
+      <li>
+        <p class="name">blur</p>
+        <p class="comment">要素がフォーカスを<br>失っている時</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="view" class="event">
+    <h2>View Event</h2>
+    <p>ウインドウをリサイズ/スクロールしてみよう</p>
+    <ul>
+      <li class="pc">
+        <p class="name">resize</p>
+        <p class="comment">ウインドウがリサイズされた時</p>
+      </li>
+      <li>
+        <p class="name">scroll</p>
+        <p class="comment">スクロールされた時</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="view" class="event bg-dark">
+    <h2 id="media-file">Media file Event</h2>
+    <p>動画を再生/一時停止してみよう</p>
+    <video src="img/gluehbirne.mov" controls muted playsinline preload="none"></video>
+    <ul>
+      <li>
+        <p class="name">play</p>
+        <p class="comment">メディアファイルが<br>再生された時</p>
+      </li>
+      <li>
+        <p class="name">playing</p>
+        <p class="comment">メディアファイルが再生中の時</p>
+      </li>
+      <li>
+        <p class="name">pause</p>
+        <p class="comment">メディアファイルの<br>再生が一時停止の時</p>
+      </li>
+      <li>
+        <p class="name">progress</p>
+        <p class="comment">メディアファイルを読み込み中の時</p>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <a class="logo" href="#">Event Labo</a>
+    <a class="myname" href="https://twitter.com/sac_180822" target="_blank">yuki 256times</a>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
